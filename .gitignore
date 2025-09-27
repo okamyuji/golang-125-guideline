@@ -1,0 +1,165 @@
+# Go 1.25 ガイドラインプロジェクト用 .gitignore
+
+# === Go 標準 ===
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories (remove the comment below to include it)
+# vendor/
+
+# Go workspace file
+go.work
+go.work.sum
+
+# === Flight Recorder 関連 ===
+# スナップショットファイル（一時的なトレースファイル）
+snap-*.ctrace
+*.ctrace
+trace-*.out
+
+# === テスト関連 ===
+# テスト結果ファイル
+coverage.out
+coverage.html
+test-results.xml
+benchmark-*.out
+
+# === IDE・エディタ ===
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# GoLand/IntelliJ
+.idea/
+*.iml
+*.iws
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# === OS 固有 ===
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.tmp
+*.temp
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# === ログファイル ===
+*.log
+logs/
+*.log.*
+
+# === 一時ファイル ===
+tmp/
+temp/
+.tmp/
+.temp/
+
+# === 実験的機能関連 ===
+# GOEXPERIMENT=jsonv2 での出力比較ファイル
+json-v1-output.json
+json-v2-output.json
+json-comparison-*.json
+
+# === プロファイリング・デバッグ ===
+# pprof プロファイル
+*.prof
+cpu.prof
+mem.prof
+block.prof
+mutex.prof
+goroutine.prof
+
+# デバッグファイル
+debug.out
+*.debug
+
+# === ビルド成果物 ===
+# バイナリファイル（プロジェクト名）
+/flightrecorder/flightrecorder
+/jsonv2/jsonv2
+/synctest/synctest
+
+# === 環境設定 ===
+.env
+.env.local
+.env.*.local
+
+# === ドキュメント生成 ===
+# godoc 生成ファイル
+doc/
+docs/generated/
+
+# === その他 ===
+# バックアップファイル
+*.bak
+*.backup
+*.orig
+
+# 圧縮ファイル
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+
+# 設定ファイルのローカル版
+config.local.*
+settings.local.*
