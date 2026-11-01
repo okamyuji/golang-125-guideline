@@ -1,0 +1,19 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  ci:
+    strategy:
+      fail-fast: false
+      matrix:
+        dir:
+          - flightrecorder
+          - jsonv2
+          - synctest
+    uses: okamyuji/reusable-workflows/.github/workflows/go-ci.yml@v1
+    with:
+      working-directory: ${{ matrix.dir }}
+  security:
+    uses: okamyuji/reusable-workflows/.github/workflows/security-scan.yml@v1
